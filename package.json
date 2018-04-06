@@ -1,0 +1,38 @@
+{
+  "name": "slice",
+  "version": "0.0.1",
+  "main": "lib/index.js",
+  "author": "means88",
+  "license": "MIT",
+  "scripts": {
+    "build": "rm -rf lib && node_modules/babel-cli/bin/babel.js src --out-dir lib --copy-files && webpack",
+    "lint": "node_modules/eslint/bin/eslint.js src"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.2",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "eslint": "^4.19.1",
+    "uglifyjs-webpack-plugin": "^1.2.4",
+    "webpack": "^4.5.0",
+    "webpack-cli": "^2.0.14"
+  },
+  "babel": {
+    "presets": [
+      "stage-0",
+      "env"
+    ],
+    "plugins": [
+      "transform-class-properties",
+      "add-module-exports"
+    ]
+  },
+  "files": [
+    "lib"
+  ]
+}
