@@ -1,4 +1,4 @@
-Potato Floss
+Potato Floss [![npm version](https://badge.fury.io/js/potato-floss.svg)](https://badge.fury.io/js/potato-floss)
 ===
 
 Getting Start
