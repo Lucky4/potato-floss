@@ -9,6 +9,13 @@ Getting Start
 ```sh
 npm install potato-floss
 ```
+```js
+import { PotatoFloss } from 'potato-floss';
+```
+or
+```html
+<script src="https://cdn.rawgit.com/Means88/potato-floss/0.0.1/lib/potato-floss.min.js"></script>
+```
 
 #### A complete potato
 ```js
