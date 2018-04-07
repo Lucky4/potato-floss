@@ -27,7 +27,7 @@ if (typeof rIC === 'function' &&
   cancelSchedule = fakeCancelIdleCallback;
 }
 
-export class SlicedWork {
+export class PotatoFloss {
   constructor(generatorFunction, callback, options = {}) {
     this.generator = generatorFunction();
     this.callback = callback;
@@ -46,7 +46,7 @@ export class SlicedWork {
     return new Promise((resolve, reject) => {
       this._resolve = resolve;
       this._reject = reject;
-      this.requireNextPiece();
+      this._requireNextPiece();
     });
   }
 
@@ -55,11 +55,11 @@ export class SlicedWork {
     this._reject(e);
   }
 
-  requireNextPiece() {
-    this._pieceId = this._schedule(this.idleCallback);
+  _requireNextPiece() {
+    this._pieceId = this._schedule(this._idleCallback);
   }
 
-  idleCallback = (deadline) => {
+  _idleCallback = (deadline) => {
     let piece = this.generator.next();
     while (deadline.timeRemaining() > 1 && !piece.done) {
       piece = this.generator.next();
@@ -70,6 +70,6 @@ export class SlicedWork {
       return;
     }
     this.callback.call(null, piece.value);
-    this.requireNextPiece();
+    this._requireNextPiece();
   };
 }

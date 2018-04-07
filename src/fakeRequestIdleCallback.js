@@ -16,7 +16,7 @@ class Deadline {
 
 const fRICMap = {};
 
-export function fakeRequestIdleCallback(callback, options) {
+export function fakeRequestIdleCallback(callback) {
   const id = setTimeout(() => {
     callback.call(null, new Deadline());
     delete fRICMap[id];

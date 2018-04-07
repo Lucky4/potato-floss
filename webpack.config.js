@@ -4,7 +4,7 @@ const path = require('path');
 module.exports = {
   mode: 'production',
   entry: {
-    'slice.min': './src/index.js',
+    'potato-floss.min': './src/index.js',
   },
   output: {
     path: path.resolve(__dirname, './lib'),

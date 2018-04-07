@@ -1,12 +1,15 @@
 {
-  "name": "slice",
+  "name": "potato-floss",
   "version": "0.0.1",
+  "description": "sliced asynchronous function",
   "main": "lib/index.js",
   "author": "means88",
   "license": "MIT",
   "scripts": {
     "build": "rm -rf lib && node_modules/babel-cli/bin/babel.js src --out-dir lib --copy-files && webpack",
-    "lint": "node_modules/eslint/bin/eslint.js src"
+    "build:docs": "cp ./lib/potato-floss.min.js ./docs/potato-floss.min.js",
+    "lint": "node_modules/eslint/bin/eslint.js src",
+    "prepublish": "npm run build && npm run build:docs"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
